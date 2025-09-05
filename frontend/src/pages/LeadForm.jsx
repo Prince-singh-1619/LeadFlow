@@ -74,6 +74,8 @@ const LeadForm = () => {
 
         const resData = await res.json()
         if (resData.success) {
+            setData({name: "", email: "", phone: "", company: "", notes: ""})
+            setError('')
             alert(resData.message)
             console.log(resData.message)
             console.log(resData.data)
@@ -136,7 +138,7 @@ const LeadForm = () => {
                         </label>
                         <input
                             id="phone"
-                            type="text"
+                            type="number"
                             name="phone"
                             placeholder="Enter phone number"
                             value={data.phone}
